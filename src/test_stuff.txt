@@ -1,0 +1,44 @@
+import re
+def string_calc(str):
+    if str == "":
+        return 0
+    else:
+        if len(str) == 1:
+            c = str
+            return int(c)
+        else:
+            sum,x = 0,re.split("\D",str)
+            for i in x:
+                sum = sum + int(i)
+            return sum
+       
+import numpy as np
+def string_calc(str):
+    if str == "":
+        return 0
+    else:
+        if len(str) == 1:
+            c = str
+            return int(c)
+        else:
+            a = []
+            b = []
+            suma = 0
+            sumb = 0
+            for i in range(0,len(str)):
+                if str[i] == ",":
+                    d = i+1
+                    break
+                a.append(int(str[i]))
+            for j in range(d,len(str)):
+                b.append(int(str[j]))
+            for k in range(0,len(a)):
+                suma = suma*10 + a[k]
+                if a[k] == None:
+                    break
+            for l in range(0,len(b)):
+                sumb = sumb*10 + b[l]
+                if b[l] == None:
+                    break
+            totalsum = suma + sumb
+            return totalsum
