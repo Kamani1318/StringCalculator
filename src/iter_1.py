@@ -6,10 +6,20 @@ def string_calc(str):
     if str == "":
         return 0
     else:
-        numbers = re.split(",|\n",str)
-        res = [int(i) for i in numbers]
-        print(res)
-        return reduce(lambda x,y: x + y, res)
+        delimiter = ","
+        lines = re.split("\n",str)
+        print(lines)
+        sum = []
+        for line in lines:
+            if line.startswith("//"):
+                delimiter = line[2]
+                continue
+            numbers = re.split(delimiter,line)
+            num = [int(i) for i in numbers]
+            print(num)
+            sum.extend(num)
+        return reduce(lambda acc,iter: acc + iter,sum)
+            
     
 
 

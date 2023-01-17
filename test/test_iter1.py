@@ -21,6 +21,10 @@ def test_with_new_line():
 def test_with_comma_before_newline():
     with pytest.raises(ValueError):
         string_calc("1,\n")
+        
+def test_with_different_delimiters():
+    assert string_calc("//;\n1;2") == 3
+
     
 
 
