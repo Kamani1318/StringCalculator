@@ -15,5 +15,9 @@ def test_with_two_numbers():
 def test_with_unknown_numbers():
     assert string_calc("1,2,3,5") == 11
     
+def test_with_new_line():
+    assert string_calc("1\n2,3") == 6
+
+    
 
     

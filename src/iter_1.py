@@ -6,7 +6,7 @@ def string_calc(str):
     if str == "":
         return 0
     else:
-        numbers = re.split(",",str)
+        numbers = re.split(",|\n",str)
         res = [eval(i) for i in numbers]
         print(res)
         return reduce(lambda x,y: x + y, res)
