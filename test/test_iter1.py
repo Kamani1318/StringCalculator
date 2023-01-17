@@ -8,4 +8,7 @@ def test_with_empty_string():
     
 def test_with_one_number():
     assert string_calc("1") == 1
+
+def test_with_two_numbers():
+    assert string_calc("1,2") == 3
     
