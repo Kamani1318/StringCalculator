@@ -17,6 +17,12 @@ def test_with_unknown_numbers():
     
 def test_with_new_line():
     assert string_calc("1\n2,3") == 6
+    
+def test_with_comma_before_newline():
+    with pytest.raises(ValueError):
+        string_calc("1,\n")
+    
+
 
     
 

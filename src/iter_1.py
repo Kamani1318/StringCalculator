@@ -7,9 +7,10 @@ def string_calc(str):
         return 0
     else:
         numbers = re.split(",|\n",str)
-        res = [eval(i) for i in numbers]
+        res = [int(i) for i in numbers]
         print(res)
         return reduce(lambda x,y: x + y, res)
+    
 
 
             
