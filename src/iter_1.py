@@ -8,7 +8,6 @@ def string_calc(str):
     else:
         delimiter = ","
         lines = re.split("\n",str)
-        print(lines)
         sum = []
         for line in lines:
             if line.startswith("//"):
@@ -16,8 +15,10 @@ def string_calc(str):
                 continue
             numbers = re.split(delimiter,line)
             num = [int(i) for i in numbers]
-            print(num)
             sum.extend(num)
+            for i in sum:
+                if i<0:
+                    raise ValueError('negatives not allowed')
         return reduce(lambda acc,iter: acc + iter,sum)
             
     

@@ -24,6 +24,10 @@ def test_with_comma_before_newline():
         
 def test_with_different_delimiters():
     assert string_calc("//;\n1;2") == 3
+    
+def test_with_negative_numebrs():
+    with pytest.raises(ValueError):
+        string_calc("-1,2,3")
 
     
 
